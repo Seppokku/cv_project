@@ -4,3 +4,5 @@ torch
 torchvision 
 matplotlib
 segmentation-models-pytorch==0.3.3
+ultralytics==8.2.69
+ultralytics-thop==2.0.0

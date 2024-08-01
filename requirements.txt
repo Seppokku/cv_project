@@ -3,3 +3,4 @@ Pillow
 torch 
 torchvision 
 matplotlib
+segmentation-models-pytorch==0.3.3

@@ -36,7 +36,7 @@ if uploaded_file is not None:
         
         image = Image.open(uploaded_file)
         st.image(image, caption='Uploaded image file')
-        confidence_file = st.slider('Choose confidence', 0, 100)
+        confidence_file = st.slider('Choose confidence', 20, 100)
         res_file = model.predict(image, conf=confidence_file/100)
         res_plotted_file = res_file[0].plot()
             
@@ -46,7 +46,7 @@ if image_url:
         image = load_image_from_url(image_url)
         if image:
              st.image(image, caption='Uploaded image url')
-             confidence_url = st.slider('Choose your confidence', 0, 100)
+             confidence_url = st.slider('Choose your confidence', 20, 100)
              res_url = model.predict(image, conf=confidence_url/100)
              res_plotted_url = res_url[0].plot()
             

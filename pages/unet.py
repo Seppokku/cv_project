@@ -33,11 +33,11 @@ transform = T.Compose([
 
 
 st.header('Load your own image or give url')
-uploaded_file = st.file_uploader("Upload image file", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("Upload image file", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
 image_url = st.text_input("Enter image URL")
 if uploaded_file is not None:
-        
-        image = Image.open(uploaded_file)
+    for file in uploaded_file:    
+        image = Image.open(file)
         col1, col2 = st.columns(2)
         col1.image(image, caption='Uploaded image file',width=315)
         transformed_img  = transform(image)

@@ -24,7 +24,7 @@ def load_image_from_url(url):
 device='cpu'
 
 model = smp.Unet(encoder_name="mobilenet_v2", encoder_weights="imagenet", classes=1, activation="sigmoid", encoder_depth=5, decoder_channels=[512, 256, 64, 32, 16]).to(device)
-model.load_state_dict(torch.load('models/best_weights_unet.pt', map_location=torch.device('cpu')))
+model.load_state_dict(torch.load('models/best_weights_unet_second.pt', map_location=torch.device('cpu')))
 
 transform = T.Compose([
     T.ToTensor(),

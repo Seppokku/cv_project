@@ -47,7 +47,7 @@ if image_url:
         if image:
              st.image(image, caption='Uploaded image url')
              confidence_url = st.slider('Choose your confidence', 0, 100)
-             res_url = model.predict(image, conf=confidence_file/100)
+             res_url = model.predict(image, conf=confidence_url/100)
              res_plotted_url = res_url[0].plot()
             
              st.image(res_plotted_url, caption='Predicted objects')
